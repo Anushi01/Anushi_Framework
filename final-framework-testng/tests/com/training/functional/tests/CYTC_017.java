@@ -1,28 +1,31 @@
-package com.training.sanity.tests;
+package com.training.functional.tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.LoginPOM;
+import com.training.pom.AllLoginPOM;
+import com.training.pom.ButtonClickPOM;
+import com.training.pom.TextBoxPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
-
+public class CYTC_017 {
 	private WebDriver driver;
 	private String baseUrl;
-	private LoginPOM loginPOM;
+	private AllLoginPOM loginPOM;
+	private ButtonClickPOM btnPOM;
+	private TextBoxPOM txtPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -33,7 +36,10 @@ public class LoginTests {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		loginPOM = new LoginPOM(driver); 
+		loginPOM = new AllLoginPOM(driver);
+		btnPOM = new ButtonClickPOM(driver);
+		txtPOM = new TextBoxPOM(driver);
+		//new java file obj
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -47,12 +53,26 @@ public class LoginTests {
 	}
 	@Test
 	public void validLoginTest() throws InterruptedException {
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("12345");
+		loginPOM.AllLoginDetails("admin", "12345");
+		screenShot.captureScreenShot("HomePage");
+		Thread.sleep(2000);
 		loginPOM.clickLoginBtn(); 
-		loginPOM.sendMemUserName("manzoor");
+		loginPOM.sendMemFullName("manzoor mehadi");
 		Thread.sleep(2000);
 		screenShot.captureScreenShot("First");
+		btnPOM.paymentmemButton();
+		txtPOM.enterAmount("500,00");
+		txtPOM.TransactionTypebtn();
+		txtPOM.addDescription("bonus");
+		btnPOM.paymentPageSubmitbutton();
+		//assert equals statement to confirm the page should be inserted
+		btnPOM.allSubmitbutton();
+		screenShot.captureScreenShot("transaction details");
+		String actual= btnPOM.confirmtext();
+		String Expected = "Successful payment";
+		Assert.assertEquals(actual, Expected);
+		
 	}
-	
 }
+
+	
