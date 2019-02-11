@@ -1,6 +1,9 @@
 package com.training.functional.tests;
 
+import java.awt.AWTException;
 import java.awt.List;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -23,7 +26,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class CYTC_016 {
+public class CYTC_016MemberAccountDetails {
 	private WebDriver driver;
 	private String baseUrl;
 	private AllLoginPOM loginPOM;
@@ -52,25 +55,29 @@ public class CYTC_016 {
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	@Test
-	public void validLoginTest() throws InterruptedException {
+	public void validLoginTest() throws InterruptedException, AWTException {
 		loginPOM.AllLoginDetails("admin", "12345");
 		screenShot.captureScreenShot("HomePage");
 		Thread.sleep(2000);
 		loginPOM.clickLoginBtn(); 
-		loginPOM.sendMemFullName("manzoor mehadi");
+		loginPOM.sendMemUserName("anushi");
 		Thread.sleep(2000);
 		screenShot.captureScreenShot("First");
+		Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+        Thread.sleep(2000);
 		btnPOM.accountSubmitbtn();
 		Thread.sleep(2000);
 		btnPOM.paymenttxtbtn();
 		btnPOM.searchButton();
-		/*String confText = btnPOM.confirmtext();
+		String confText = btnPOM.confirmtext();
 		boolean Actual = (confText.contains("Search transactions of Anushi khan on Member account"));
 		  boolean Expected = true;
-		  Assert.assertEquals(Actual, Expected); */
+		  Assert.assertEquals(Actual, Expected); 
 		  screenShot.captureScreenShot("Search results"); 
 		
 	}

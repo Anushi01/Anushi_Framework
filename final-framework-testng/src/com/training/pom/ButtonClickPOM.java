@@ -74,6 +74,51 @@ public class ButtonClickPOM {
 	@FindBy(xpath = "//input[@id='backButton']")
 	private WebElement backbtn;
 	
+	@FindBy(id= "modeButton")
+	private WebElement advBtn;
+	
+	@FindBy(xpath= "//img[@id='calendarTrigger0']")
+	private WebElement fromdateBtn;
+	
+	@FindBy(xpath= "//img[@id='calendarTrigger1']")
+	private WebElement todateBtn;
+	
+	@FindBy(xpath= "//span[contains(text(),'Member Payment')]")
+	private WebElement memPaymentBtn;
+	
+	/*@FindBy(id= "schedulingTypeSelect")
+	private WebElement schedulingDD;
+
+	public void schedulingDropDown() {
+		this.schedulingDD.click();
+	}
+	
+	@FindBy(xpath="//option[@value='MULTIPLE_FUTURE']")
+	private WebElement schedulingoption2;
+	
+		public void SchedulingDDSelect() {
+		Actions action = new Actions(driver);
+		action.moveToElement(schedulingoption2).click().perform();;
+	}*/
+	
+	
+	
+	public void MemberPaymentButton() {
+		this.memPaymentBtn.click();
+	}
+	
+	public void FromDateButton() {
+		this.fromdateBtn.click();
+	}
+	
+	public void ToDateButton() {
+		this.todateBtn.click();
+	}
+	
+	public void advanceButton() {
+		this.advBtn.click();
+	}
+	
 	public void BackButton() {
 		this.backbtn.click();
 	}
@@ -124,7 +169,6 @@ public class ButtonClickPOM {
 
 	public void allSubmitbutton() {
 		this.allsubmitbtn.click();
-				
 	}
 	public void grantloansubmit() {
 		this.grantloan_submitbtn.click();

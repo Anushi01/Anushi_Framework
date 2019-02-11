@@ -1,5 +1,8 @@
 package com.training.functional.tests;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -18,7 +21,7 @@ import com.training.pom.TextBoxPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class CYTC_017 {
+public class CYTC_017PaymentForMember {
 	private WebDriver driver;
 	private String baseUrl;
 	private AllLoginPOM loginPOM;
@@ -49,17 +52,21 @@ public class CYTC_017 {
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	@Test
-	public void validLoginTest() throws InterruptedException {
+	public void validLoginTest() throws InterruptedException, AWTException {
 		loginPOM.AllLoginDetails("admin", "12345");
 		screenShot.captureScreenShot("HomePage");
 		Thread.sleep(2000);
 		loginPOM.clickLoginBtn(); 
-		loginPOM.sendMemFullName("manzoor mehadi");
-		Thread.sleep(2000);
+		//loginPOM.sendMemFullName("manzoor mehadi");
+		loginPOM.sendMemUserName("anushi");
 		screenShot.captureScreenShot("First");
+		Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+        Thread.sleep(2000);
 		btnPOM.paymentmemButton();
 		txtPOM.enterAmount("500,00");
 		txtPOM.TransactionTypebtn();

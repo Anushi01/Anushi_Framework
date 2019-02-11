@@ -2,6 +2,7 @@ package com.training.pom;
 
 import java.util.List;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,8 +35,10 @@ public class TextBoxPOM {
 			return s.getOptions();
 		}
 		
-		public void enterAmount(String amount) {
+		public void enterAmount(String amount) throws InterruptedException {
 			this.amnt.sendKeys(amount);
+			Thread.sleep(1000);
+			//this.amnt.sendKeys(Keys.ENTER);
 		}
 		
 		public void addDescription(String description) {

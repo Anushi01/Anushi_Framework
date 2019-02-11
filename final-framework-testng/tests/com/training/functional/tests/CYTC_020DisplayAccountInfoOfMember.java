@@ -4,10 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -17,11 +14,10 @@ import org.testng.annotations.Test;
 import com.training.generics.ScreenShot;
 import com.training.pom.AllLoginPOM;
 import com.training.pom.ButtonClickPOM;
-import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class CYTC_019 {
+public class CYTC_020DisplayAccountInfoOfMember {
 	private WebDriver driver;
 	private String baseUrl;
 	private AllLoginPOM loginPOM;
@@ -50,24 +46,26 @@ public class CYTC_019 {
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	@Test
 	public void validLoginTest() throws InterruptedException {
-		loginPOM.AllLoginDetails("admin", "12345");
+		loginPOM.AllLoginDetails("anushi01", "selenium123");
 		screenShot.captureScreenShot("HomePage");
 		Thread.sleep(2000);
 		loginPOM.clickLoginBtn(); 
-		loginPOM.sendMemFullName("manzoor mehadi");
+		//loginPOM.sendMemFullName("manzoor mehadi");
 		Thread.sleep(2000);
 		screenShot.captureScreenShot("First");
-		btnPOM.viewLoansSubmitbutton();
-		btnPOM.ClosedRadiobutton();
-		btnPOM.OpenRadiobutton();
-		String actual= btnPOM.confirmtext();
-		String Expected = "Successful payment";
-		Assert.assertEquals(actual, Expected);
+		btnPOM.AccountLinkButton();
+		btnPOM.AccountInfoButton();
+		Thread.sleep(1000);
+		btnPOM.ViewButton();
+		Thread.sleep(1000);
+		btnPOM.BackButton();
+		String actual = btnPOM.confirmtext();
+		String expected = "Search transactions on Member account";
+		Assert.assertEquals(actual, expected);
+				
+	}
 }
-	
-}
-

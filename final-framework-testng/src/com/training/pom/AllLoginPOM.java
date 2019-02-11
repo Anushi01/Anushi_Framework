@@ -24,6 +24,16 @@ public class AllLoginPOM {
 	
 	@FindBy(id="memberName")
 	private WebElement userFullname;
+	
+	@FindBy(id="memberUsername")
+	private WebElement memberuserName;
+	
+	public void sendMemUserName(String userName) throws InterruptedException {
+		this.memberuserName.clear();
+		this.memberuserName.sendKeys(userName);
+		Thread.sleep(1000);
+		this.memberuserName.sendKeys(Keys.ENTER);
+	}
 
 
 	/*public void sendUserName(String userName) {
