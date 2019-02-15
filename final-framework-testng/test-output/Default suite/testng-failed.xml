@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.functional.tests.CYTC_018GrantLoantoMember">
+      <class name="com.training.functional.tests.CYTC_080ErrorMessageforInvalidCredentials">
         <methods>
-          <include name="tearDown"/>
-          <include name="validLoginTest"/>
-          <include name="setUp"/>
           <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="MultiplePayment" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- com.training.functional.tests.CYTC_018GrantLoantoMember -->
+      </class> <!-- com.training.functional.tests.CYTC_080ErrorMessageforInvalidCredentials -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -47,7 +47,8 @@ public class ButtonClickPOM {
 	@FindBy(xpath ="//input[@value='Submit']" )
 	private WebElement allsubmitbtn;
 	
-	@FindBy(xpath = "//*/tr/td/input[contains(@linkurl,'grantLoan?memberId=52')][@class='linkButton']")
+	//@FindBy(xpath = "//*/tr/td/input[contains(@linkurl,'grantLoan?memberId=52')][@class='linkButton']")
+	@FindBy(xpath="//*[@id=\"tdContents\"]/table[1]/tbody/tr[2]/td/table/tbody/tr[8]/td/fieldset/table/tbody/tr[1]/td[4]/input")
 	private WebElement grantloan_submitbtn;
 	
 	@FindBy(xpath = "//*/tr/td/input[contains(@linkurl,'searchLoans?memberId=52')][@class='linkButton']")

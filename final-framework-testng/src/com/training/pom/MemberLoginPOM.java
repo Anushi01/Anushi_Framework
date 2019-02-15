@@ -57,6 +57,16 @@ public class MemberLoginPOM {
 		//this.memberuserName.clear();
 		this.memberuserName.sendKeys(userName);
 		Thread.sleep(1000);
+		//this.memberuserName.sendKeys(Keys.ENTER);
+	}
+	
+	@FindBy(id="memberUsername")
+	private WebElement memberuserName1;
+	
+	public void sendMemUserName1(String userName) throws InterruptedException {
+		//this.memberuserName.clear();
+		this.memberuserName1.sendKeys(userName);
+		Thread.sleep(1000);
 		this.memberuserName.sendKeys(Keys.ENTER);
 	}
 	
@@ -319,4 +329,35 @@ public class MemberLoginPOM {
 		s.selectByVisibleText("Loan payments");
 		return s.getOptions();
 	}
+	
+	@FindBy(xpath="//span[contains(text(),'Loans')]")
+	private WebElement loanbtn;
+	
+	public void LoanButton() {
+		this.loanbtn.click();
+	}
+	
+	@FindBy(xpath="//tbody//tbody//tr[2]//td[4]//img[1]")
+	private WebElement viewbtn;
+	
+	public void ViewButton() {
+		this.viewbtn.click();
+	}
+	
+	@FindBy(id="amountText")
+	private WebElement amounttextbox;
+	
+	public void AmounttextBox() throws InterruptedException {
+		Thread.sleep(1000);
+		this.amounttextbox.clear();
+		this.amounttextbox.sendKeys("500");
+	}
+	
+	@FindBy(xpath="//input[@value='Repay']")
+	private WebElement repaybtn;
+	
+	public void RepayButton() {
+		this.repaybtn.click();
+	}
+
 }

@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20699" started-at="2019-02-11T11:12:29Z" finished-at="2019-02-11T11:12:50Z">
+  <suite name="Default suite" duration-ms="21853" started-at="2019-02-15T13:48:22Z" finished-at="2019-02-15T13:48:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20699" started-at="2019-02-11T11:12:29Z" finished-at="2019-02-11T11:12:50Z">
-      <class name="com.training.functional.tests.CYTC_017PaymentForMember">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.CYTC_017PaymentForMember@3bfdc050]" name="setUpBeforeClass" is-config="true" duration-ms="17" started-at="2019-02-11T11:12:29Z" finished-at="2019-02-11T11:12:29Z">
+    <test name="Default test" duration-ms="21853" started-at="2019-02-15T13:48:22Z" finished-at="2019-02-15T13:48:43Z">
+      <class name="com.training.functional.tests.CYTC_077LoangrantedbyAdmin">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.CYTC_077LoangrantedbyAdmin@3bfdc050]" name="setUpBeforeClass" is-config="true" duration-ms="27" started-at="2019-02-15T13:48:22Z" finished-at="2019-02-15T13:48:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.CYTC_017PaymentForMember@3bfdc050]" name="setUp" is-config="true" duration-ms="6552" started-at="2019-02-11T11:12:29Z" finished-at="2019-02-11T11:12:36Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.CYTC_077LoangrantedbyAdmin@3bfdc050]" name="setUp" is-config="true" duration-ms="6125" started-at="2019-02-15T13:48:22Z" finished-at="2019-02-15T13:48:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.functional.tests.CYTC_017PaymentForMember@3bfdc050]" name="validLoginTest" duration-ms="12194" started-at="2019-02-11T11:12:36Z" finished-at="2019-02-11T11:12:48Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.functional.tests.CYTC_077LoangrantedbyAdmin@3bfdc050]" name="validLoginTest" duration-ms="14691" started-at="2019-02-15T13:48:28Z" finished-at="2019-02-15T13:48:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.CYTC_017PaymentForMember@3bfdc050]" name="tearDown" is-config="true" duration-ms="1908" started-at="2019-02-11T11:12:48Z" finished-at="2019-02-11T11:12:50Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.CYTC_077LoangrantedbyAdmin@3bfdc050]" name="tearDown" is-config="true" duration-ms="1002" started-at="2019-02-15T13:48:42Z" finished-at="2019-02-15T13:48:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.CYTC_017PaymentForMember -->
+      </class> <!-- com.training.functional.tests.CYTC_077LoangrantedbyAdmin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
